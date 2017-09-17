@@ -1,0 +1,19 @@
+def encode(s):
+	count=1
+	current=[]
+	current1=""
+	for i in range(len(s)):
+		if(i==0):
+			current1=s[i]
+		elif(current1==s[i]):
+			count=count+1
+		else:
+			if(count>1):
+				current.append(count)
+			current.append(current1)
+			count=1
+			current1=s[i]
+			if(len(s)-1==i):
+				current.append(current1)
+	for i in range(len(current)):
+		print ((current[i]),end='')
